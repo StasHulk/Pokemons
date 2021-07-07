@@ -1,0 +1,38 @@
+<div class="root">
+    <div class="wrapper">
+        <div [ngClass]="classList">
+            <div class="main-img">
+                <img [src]="pokemon.img" alt="" class="pokemonImg">
+                <div class="values">
+                    <div class="count top">{{pokemon.values.top}}</div>
+                    <div class="count right">{{pokemon.values.right}}</div>
+                    <div class="count bottom">{{pokemon.values.bottom}}</div>
+                    <div class="count left">{{pokemon.values.left}}</div>
+                </div>
+            </div>
+            <div class="info">
+                <span class="number">#{{pokemon.id}}</span>
+                <h3 class="name">{{pokemon.name}}</h3>
+                <small class="type">Type: <span>{{pokemon.type}}</span></small>
+                <p class="abilities">Abilities: {{pokemon.abilities.join(", ")}}</p>
+            </div>
+            <div class="stats">
+                <h4 class="stats__title">Stats</h4>
+                <div class="stats-row">
+                    <div class="stats__column">
+                        <p class="stats__text">HP: {{pokemon.stats.hp}}</p>
+                        <p class="stats__text">Attack: {{pokemon.stats.attack}}</p>
+                        <p class="stats__text">Defense: {{pokemon.stats.defense}}</p>
+                    </div>
+                    <div class="stats__column">
+                        <p class="stats__text">Special-attack: {{pokemon.stats["special-attack"]}}</p>
+                        <p class="stats__text">Special-defense: {{pokemon.stats["special-defense"]}}</p>
+                        <p class="stats__text">Speed: {{pokemon.stats["speed"]}}</p>
+                    </div>
+                </div>
+                <p class="property-title">Base experience: {{pokemon.base_experience}} </p>
+                <p class="property-title">Height: {{pokemon.height}}</p>
+            </div>
+        </div>
+    </div>
+</div>

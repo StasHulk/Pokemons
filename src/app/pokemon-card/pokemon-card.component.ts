@@ -1,28 +1,29 @@
-import { Inject } from '@angular/core';
-import { Input } from '@angular/core';
-import { Component, OnInit } from '@angular/core';
-import { Pokemon } from '../pokemon-class';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { IPokemon } from 'src/data-storage/pokemon-interface';
 
 @Component({
   selector: 'app-pokemon-card',
   templateUrl: './pokemon-card.component.html',
-  styleUrls: ['./pokemon-card.component.sass']
+  styleUrls: ['./pokemon-card.component.scss']
 })
 export class PokemonCardComponent implements OnInit {
-  @Input() pokemon: Pokemon;
+  @Input("pokemon") pokemonProps: IPokemon;
+  @Input("id") pokemonID: number;
   classList: string[];
 
-  constructor() { 
-    this.pokemon = new Pokemon({});
+  constructor(private router: Router) {
+    this.pokemonProps = {} as IPokemon;
     this.classList = ["pokemon"];
+    this.pokemonID = 0;
   }
 
   ngOnInit(): void {
-    this.classList.push(this.pokemon.type);
+    this.classList.push(this.pokemonProps.type)
   }
 
-  logPokemon(){
-    console.log(this.pokemon);
+  navigateToInfo(){
+    this.router.navigate(["/pokemonInfo", this.pokemonID]);
   }
 
 }
