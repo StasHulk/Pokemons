@@ -1,0 +1,21 @@
+.flex
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-wrap: wrap
+
+.root
+  font-size: 1.4rem
+  position: relative
+  background: #ccc
+  clip-path: polygon(0 0, 20% 5%, 100% 0, 100% 100%, 80% 95%, 0 100%)
+  z-index: 5
+  background-attachment: fixed
+
+  .wrapper
+    padding: 5rem 1rem 2rem
+    max-width: 1400px
+    margin: 0 auto
+
+.pokemonCard:hover
+  transform: rotateY(180deg)

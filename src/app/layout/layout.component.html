@@ -1,0 +1,12 @@
+<section class="root" [ngStyle]="myStyles">
+    <div class="wrapper">
+        <div class="flex">
+            <app-pokemon-card 
+                *ngFor="let pokemonCard of pokemonService.pokemonList$ | async; 
+                let i = index" 
+                [pokemon]="pokemonCard" 
+                [id]="i">
+            </app-pokemon-card>
+        </div>
+    </div>
+</section>

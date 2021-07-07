@@ -1,0 +1,31 @@
+<div class="root">
+    <div class="pokemonCard">
+        <div class="cardFront" (click)="navigateToInfo()">
+            <div class="wrap front">
+                <div [ngClass]="classList">
+                    <div class="values">
+                        <div class="count top">{{pokemonProps.values.top}}</div>
+                        <div class="count right">{{pokemonProps.values.right}}</div>
+                        <div class="count bottom">{{pokemonProps.values.bottom}}</div>
+                        <div class="count left">{{pokemonProps.values.left}}</div>
+                    </div>
+                    <div class="imgContainer">
+                        <img [src]="pokemonProps.img" [alt]="pokemonProps.name" />
+                    </div>
+                    <div class="info">
+                        <span class="number">#{{pokemonProps.id}}</span>
+                        <h3 class="name">{{pokemonProps.name}}</h3>
+                        <small class="type">Type: <span>{{pokemonProps.type}}</span></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cardBack">
+            <div class="wrap back">
+                <img src="https://play-lh.googleusercontent.com/GU2izEZOquAFv6oKKibJyq6yUYHaGSoiia6_A-K3RQ3Li56tMDTWoPdFxEotmjKVsuo" alt="Сard Backed"/>
+            </div>
+        </div>
+
+  </div>
+</div>
